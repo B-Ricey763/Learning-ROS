@@ -1,3 +1,10 @@
 site_name: Learning ROS
 theme: 
   name: material
+
+nav:
+  - Getting Started: index.md
+  - ROS Installation & Setup: rossetup.md
+  - SSH GUI Forwarding: guiforwarding.md
+  - Useful Commands: linuxcmds.md
+  - Further Reading: links.md
