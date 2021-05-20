@@ -9,19 +9,19 @@
       
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
     
     
       
-        <title>Learning ROS</title>
+        <title>SSH GUI Forwarding - Learning ROS</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
         
       
     
@@ -51,7 +51,7 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
   
     
-    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#getting-started" class="md-skip">
+        <a href="#ssh-gui-forwarding" class="md-skip">
           Skip to content
         </a>
       
@@ -70,7 +70,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Learning ROS" class="md-header__button md-logo" aria-label="Learning ROS" data-md-component="logo">
+    <a href=".." title="Learning ROS" class="md-header__button md-logo" aria-label="Learning ROS" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -89,7 +89,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Getting Started
+              SSH GUI Forwarding
             
           </span>
         </div>
@@ -150,7 +150,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Learning ROS" class="md-nav__button md-logo" aria-label="Learning ROS" data-md-component="logo">
+    <a href=".." title="Learning ROS" class="md-nav__button md-logo" aria-label="Learning ROS" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -160,6 +160,36 @@
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rossetup/" class="md-nav__link">
+        ROS Installation & Setup
+      </a>
+    </li>
+  
+
     
       
       
@@ -178,40 +208,10 @@
         
       
       
-      <a href="." class="md-nav__link md-nav__link--active">
-        Getting Started
-      </a>
-      
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="rossetup/" class="md-nav__link">
-        ROS Installation & Setup
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="guiforwarding/" class="md-nav__link">
+      <a href="./" class="md-nav__link md-nav__link--active">
         SSH GUI Forwarding
       </a>
+      
     </li>
   
 
@@ -224,7 +224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="linuxcmds/" class="md-nav__link">
+      <a href="../linuxcmds/" class="md-nav__link">
         Useful Commands
       </a>
     </li>
@@ -239,7 +239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="links/" class="md-nav__link">
+      <a href="../links/" class="md-nav__link">
         Further Reading
       </a>
     </li>
@@ -276,9 +276,27 @@
               
                 
                 
-                <h1 id="getting-started">Getting Started</h1>
-<p>ROS, or robot operating system, is quite confusing and daunting at first (at least it was for me). So I decided to document my experience here. Hope you Enjoy!</p>
-<p>ROS is not necessarily an operating system, it is a repository of packages that can be used together. You have to install a <a href="https://wiki.ros.org/Distributions">distribution</a> to a Unix platform, in my case, Ubuntu. Go to <a href="/rossetup">ROS Setup</a> and follow the instructions to install ROS.</p>
+                <h1 id="ssh-gui-forwarding">SSH GUI Forwarding</h1>
+<p>First, install <a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a>, which is the X11 forwarding server. Follow the instructions and launch it. The <code>X</code> icon should appear in the tray to show that it is running.</p>
+<h1 id="commands-not-working-currently"><em>Commands not working currently</em></h1>
+<p>Go to SSH server and run the command:</p>
+<pre><code class="language-bash">echo 'DISPLAY=localhost:0' &gt;&gt; ~/.bashrc
+</code></pre>
+<p>Then, on the SSH client, connect normally with OpenSSH but add a <code>-X</code> flag:</p>
+<pre><code class="language-powershell">ssh -X ubuntu@&lt;ip_address&gt;
+</code></pre>
+<p>To test this, download some basic gui applications with:</p>
+<pre><code class="language-bash">sudo apt install x11-apps
+</code></pre>
+<p>And then run <code>xcalc</code>. A gui window should appear. For more information, see</p>
+<p><strong>Helpful Links:</strong>
+* <a href="https://unix.stackexchange.com/questions/207365/x-flag-x11-forwarding-does-not-appear-to-work-in-windows">This stack question</a>
+Doesn't even help, here is another sorta good link: https://jack-kawell.com/2020/06/12/ros-wsl2/
+and this if you have to use p has some good things although I never got found any pivotal data.<br />
+* <a href="https://jack-kawell.com/2020/06/12/ros-wsl2/">Tutorial to install WSL2</a>, although not exactly directly addressing the problem, has a good gui forwarding section. I used one of the commands, <code>echo 'export DISPLAY=&lt;your_ip_address&gt;:0.0' &gt;&gt; ~/.bashrc</code> . Don't know what else I used to get it to work.
+* <a href="https://codeyarns.com/tech/2013-01-21-byobu-function-keys-do-not-work-in-putty.html">How to fix F keys in Putty </a>  in case you have to use PuTTY instead of OpenSSH.
+* <a href="https://fabianlee.org/2018/10/14/ubuntu-x11-forwarding-to-view-gui-applications-running-on-server-hosts/
+%20https://bbs.archlinux.org/viewtopic.php?id=88883">Ancient Forum Post</a> that might help.</p>
                 
               
               
@@ -297,14 +315,28 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
+        <a href="../rossetup/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              ROS Installation & Setup
+            </div>
+          </div>
+        </a>
       
-        <a href="rossetup/" class="md-footer__link md-footer__link--next" rel="next">
+      
+        <a href="../linuxcmds/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              ROS Installation & Setup
+              Useful Commands
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -333,10 +365,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.a1609d9a.min.js"></script>
+      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
       
     
   </body>

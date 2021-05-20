@@ -14,7 +14,7 @@
     
     
       
-        <title>ROS Installation and Setup - My Docs</title>
+        <title>ROS Installation & Setup - Learning ROS</title>
       
     
     
@@ -70,7 +70,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href=".." title="Learning ROS" class="md-header__button md-logo" aria-label="Learning ROS" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -83,13 +83,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            My Docs
+            Learning ROS
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ROS Installation and Setup
+              ROS Installation & Setup
             
           </span>
         </div>
@@ -150,13 +150,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href=".." title="Learning ROS" class="md-nav__button md-logo" aria-label="Learning ROS" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    My Docs
+    Learning ROS
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -170,7 +170,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Learning ROS
+        Getting Started
       </a>
     </li>
   
@@ -193,40 +193,55 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          ROS Installation and Setup
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        ROS Installation and Setup
+        ROS Installation & Setup
       </a>
       
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+    </li>
   
-  
-  
+
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
-        <li class="md-nav__item">
-  <a href="#materials" class="md-nav__link">
-    Materials
-  </a>
-  
-</li>
       
-    </ul>
-  
-</nav>
       
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guiforwarding/" class="md-nav__link">
+        SSH GUI Forwarding
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linuxcmds/" class="md-nav__link">
+        Useful Commands
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../links/" class="md-nav__link">
+        Further Reading
+      </a>
     </li>
   
 
@@ -250,21 +265,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#materials" class="md-nav__link">
-    Materials
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -277,7 +277,7 @@
                 
                 
                 <h1 id="ros-installation-and-setup">ROS Installation and Setup</h1>
-<h2 id="materials">Materials</h2>
+<h1 id="materials">Materials</h1>
 <ul>
 <li>Raspberry Pi 4</li>
 <li>Sandisk microSD card (32 GB)</li>
@@ -285,14 +285,24 @@
 <li>Keyboard (and mouse, maybe)</li>
 <li>Ethernet for the Pi to facilitate the installation</li>
 </ul>
-<p>First, install the <a href="https://www.raspberrypi.org/software/">Raspberry Pi Imager</a>. </p>
+<h1 id="procedure">Procedure</h1>
+<p>First, install the <a href="https://www.raspberrypi.org/software/">Raspberry Pi Imager</a>. Open it and choose an OS, in my case Ubuntu Server 20.04. I'm using the server distro since in the final product we won't need a desktop or an guis for that matter. Make sure to choose the 64-bit distro. Before imaging, make sure your microSD is connected to your computer.</p>
 <p><img alt="rpi imager" src="../img/Raspi_Imager.png" /></p>
-<p>To connect with SSH, I configured the pi with a hostname of <code>hyperion4516</code> and a default username of <code>ubuntu</code>. Using OpenSSH (on any OS, really) you can connect to the Pi with:</p>
-<pre><code class="language-bash">ssh ubuntu@hyperion4516
+<p>Once ubuntu is installed, put the microSD into the Pi, plug in the ethernet (or <a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi#3-wifi-or-ethernet">use normal WiFi</a>). On your first boot, connect an HDMI and keyboard (no mouse needed) to access the command line. Once you are in, run <code>sudo apt update</code> and <code>sudo apt upgrade</code> to make sure everything is up to date and test your network connection. Once you see everything works, you need to set your static hostname so you don't have to connect with IP using ssh. </p>
+<pre><code class="language-bash">hostnamectl set-hostname &lt;your_hostname&gt;
+# ex
+hostnamectl set-hostname hello_world
 </code></pre>
-<p>It will prompt you for the password, which is <code>hyperion4516</code></p>
+<p>To verify everything works, run <code>hostname</code> and see if the result matches your input. To connect with SSH, I configured the pi with a hostname of <code>hyperion4516</code> and a default username of <code>ubuntu</code>. </p>
 <blockquote>
-<p>You can also use <a href="https://putty.en.softonic.com/">PuTTY</a>, which might actually be a better solution. It has easy configs but an ugly command line (But you can fix that).</p>
+<p>For debugging the IP of your pi, I recommend using <a href="https://www.advanced-ip-scanner.com/">Advanced IP Scanner</a>. Look for an ubuntu username and copy the IP. You can use <code>ssh ip_address</code> to connect as as well.</p>
+</blockquote>
+<p>Using OpenSSH (on any OS, really) you can connect to the Pi with:</p>
+<pre><code class="language-bash">ssh ubuntu@hyperion4516 # username@hostname
+</code></pre>
+<p>It will prompt you for the password, which is <code>hyperion4516</code>.</p>
+<blockquote>
+<p>You can also use <a href="https://putty.en.softonic.com/">PuTTY</a>, which might actually be a better solution. It has easy configs but an ugly command line (But you can fix that). It makes gui forwarding very easy.</p>
 </blockquote>
 <p>From the SSH client connected to the server, you can then follow the installation guide for <a href="http://wiki.ros.org/noetic/Installation/Ubuntu">ROS Noetic</a>. Install <code>ros-noetic-desktop-full</code> for all the packages you need. Make sure to properly configure and source your <code>.bashrc</code>     file for use in ROS with these commands:</p>
 <pre><code class="language-bash">echo &quot;source /opt/ros/noetic/setup.bash&quot; &gt;&gt; ~/.bashrc
@@ -344,11 +354,25 @@ rosed &lt;package&gt; &lt;file&gt; # edit package file with Vim
               <span class="md-footer__direction">
                 Previous
               </span>
-              Learning ROS
+              Getting Started
             </div>
           </div>
         </a>
       
+      
+        <a href="../guiforwarding/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              SSH GUI Forwarding
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
