@@ -1,6 +1,13 @@
 site_name: Learning ROS
 theme: 
   name: material
+  palette:
+    scheme: slate
+    primary: green
+    accent: yellow
+  highlightjs: true
+  hljs_languages:
+    - bash
 
 nav:
   - Getting Started: index.md
@@ -8,3 +15,10 @@ nav:
   - SSH GUI Forwarding: guiforwarding.md
   - Useful Commands: linuxcmds.md
   - Further Reading: links.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.superfences
+  - admonition
+  - toc

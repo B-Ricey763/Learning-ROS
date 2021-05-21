@@ -1,21 +1,22 @@
 # SSH GUI Forwarding 
+For this tutorial I'm using [PuTTY](https://putty.en.softonic.com/) since it is a lot easier to configure gui forwarding.
+
 First, install [VcXsrv](https://sourceforge.net/projects/vcxsrv/), which is the X11 forwarding server. Follow the instructions and launch it. The `X` icon should appear in the tray to show that it is running.
 
-# *Commands not working currently*
+Open Putty, go to `Connection > SSH > X11` and enable X11 forwarding. 
 
-Go to SSH server and run the command:
-```bash
-echo 'DISPLAY=localhost:0' >> ~/.bashrc
-```
-Then, on the SSH client, connect normally with OpenSSH but add a `-X` flag:
-```powershell
-ssh -X ubuntu@<ip_address>
-```
-To test this, download some basic gui applications with:
+![putty info](img/PuTTY_x11_gui.png)
+
+That's it, as long as you haven't edited the `.bashrc` on the server (in my case, the pi). To test, install some gui apps:
 ```bash
 sudo apt install x11-apps
 ```
-And then run `xcalc`. A gui window should appear. For more information, see
+And then run one of the apps:
+```bash
+xcalc 
+```
+A nice little window with a calculator should appear
+
 
 **Helpful Links:**
 * [This stack question](https://unix.stackexchange.com/questions/207365/x-flag-x11-forwarding-does-not-appear-to-work-in-windows)

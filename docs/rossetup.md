@@ -1,13 +1,13 @@
 # ROS Installation and Setup
 
-# Materials
+## Materials
 - Raspberry Pi 4
 - Sandisk microSD card (32 GB)
 - microHDMI (A-M)
 - Keyboard (and mouse, maybe)
 - Ethernet for the Pi to facilitate the installation
 
-# Procedure
+## Installing the OS
 First, install the [Raspberry Pi Imager](https://www.raspberrypi.org/software/). Open it and choose an OS, in my case Ubuntu Server 20.04. I'm using the server distro since in the final product we won't need a desktop or an guis for that matter. Make sure to choose the 64-bit distro. Before imaging, make sure your microSD is connected to your computer.
 
 ![rpi imager](img/Raspi_Imager.png)
@@ -19,7 +19,10 @@ hostnamectl set-hostname <your_hostname>
 hostnamectl set-hostname hello_world
 ```
 To verify everything works, run `hostname` and see if the result matches your input. To connect with SSH, I configured the pi with a hostname of `hyperion4516` and a default username of `ubuntu`. 
-> For debugging the IP of your pi, I recommend using [Advanced IP Scanner](https://www.advanced-ip-scanner.com/). Look for an ubuntu username and copy the IP. You can use `ssh ip_address` to connect as as well.
+!!! note 
+    For debugging the IP of your pi, I recommend using [Advanced IP Scanner](https://www.advanced-ip-scanner.com/). Look for an ubuntu username and copy the IP. You can use `ssh ip_address` to connect as as well.
+
+## Connecting with SSH
 
 Using OpenSSH (on any OS, really) you can connect to the Pi with:
 ```bash
@@ -27,7 +30,10 @@ ssh ubuntu@hyperion4516 # username@hostname
 ```
 It will prompt you for the password, which is `hyperion4516`.
 
-> You can also use [PuTTY](https://putty.en.softonic.com/), which might actually be a better solution. It has easy configs but an ugly command line (But you can fix that). It makes gui forwarding very easy.
+!!! note
+    You can also use [PuTTY](https://putty.en.softonic.com/), which might actually be a better solution. It has easy configs but an ugly command line (But you can fix that). It makes gui forwarding very easy.
+
+## Installing ROS
 
 From the SSH client connected to the server, you can then follow the installation guide for [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu). Install `ros-noetic-desktop-full` for all the packages you need. Make sure to properly configure and source your `.bashrc`	 file for use in ROS with these commands:
 ```bash
@@ -50,10 +56,14 @@ roscd <package> # go to package directory
 rosls <package> # list the subdirectories and files in package
 rosed <package> <file> # edit package file with Vim
 ```
+
+## Using Byobu
+
 Once you are done with the basic setup, I would recommend running `byobu` to activate a window switching command line thing. It helps with ROS stuff. Some simple hotkeys are:
-* `F2`: to create a new window
-* `F3, F4`: To switch between active windows
-* `Shift + F6`: To close active window
+
+-  `F2`: to create a new window
+- `F3, F4`: To switch between active windows
+- `Shift + F6`: To close active window
 
 Here is a  [cheatsheet](https://www.linuxsecrets.com/3326-byobu-commands) with most of the comands.
 
