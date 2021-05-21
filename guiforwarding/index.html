@@ -23,6 +23,10 @@
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
         
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
       
     
     
@@ -48,7 +52,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="yellow">
   
     
     <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -277,18 +281,19 @@
                 
                 
                 <h1 id="ssh-gui-forwarding">SSH GUI Forwarding</h1>
+<p>For this tutorial I'm using <a href="https://putty.en.softonic.com/">PuTTY</a> since it is a lot easier to configure gui forwarding.</p>
 <p>First, install <a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a>, which is the X11 forwarding server. Follow the instructions and launch it. The <code>X</code> icon should appear in the tray to show that it is running.</p>
-<h1 id="commands-not-working-currently"><em>Commands not working currently</em></h1>
-<p>Go to SSH server and run the command:</p>
-<pre><code class="language-bash">echo 'DISPLAY=localhost:0' &gt;&gt; ~/.bashrc
-</code></pre>
-<p>Then, on the SSH client, connect normally with OpenSSH but add a <code>-X</code> flag:</p>
-<pre><code class="language-powershell">ssh -X ubuntu@&lt;ip_address&gt;
-</code></pre>
-<p>To test this, download some basic gui applications with:</p>
-<pre><code class="language-bash">sudo apt install x11-apps
-</code></pre>
-<p>And then run <code>xcalc</code>. A gui window should appear. For more information, see</p>
+<p>Open Putty, go to <code>Connection &gt; SSH &gt; X11</code> and enable X11 forwarding. </p>
+<p><img alt="putty info" src="../img/PuTTY_x11_gui.png" /></p>
+<p>That's it, as long as you haven't edited the <code>.bashrc</code> on the server (in my case, the pi). To test, install some gui apps:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install x11-apps
+</code></pre></div>
+</td></tr></table>
+And then run one of the apps:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>xcalc 
+</code></pre></div>
+</td></tr></table>
+A nice little window with a calculator should appear</p>
 <p><strong>Helpful Links:</strong>
 * <a href="https://unix.stackexchange.com/questions/207365/x-flag-x11-forwarding-does-not-appear-to-work-in-windows">This stack question</a>
 Doesn't even help, here is another sorta good link: https://jack-kawell.com/2020/06/12/ros-wsl2/

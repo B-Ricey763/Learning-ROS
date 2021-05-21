@@ -23,6 +23,10 @@
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
         
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
       
     
     
@@ -48,7 +52,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="yellow">
   
     
     <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -277,18 +281,22 @@
                 
                 
                 <h1 id="useful-ros-linux-commands">Useful Ros &amp; Linux Commands</h1>
-<p>Lookup ROS packages</p>
-<pre><code class="language-bash">apt-cache search ros-noetic
-</code></pre>
-<p>Installed ROS package Dependencies</p>
-<pre><code class="language-bash">sudo rosdep install &lt;package&gt;
-</code></pre>
-<p>Creates a pdf of  the <code>transform_frame</code> graph </p>
-<pre><code class="language-bash">rosrun tf2_tools view_frames.py
-</code></pre>
-<p>To view it, run</p>
-<pre><code class="language-bash">evince frames.pdf
-</code></pre>
+<p>Lookup ROS packages
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>apt-cache search ros-noetic
+</code></pre></div>
+</td></tr></table>
+Installed ROS package Dependencies
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo rosdep install &lt;package&gt;
+</code></pre></div>
+</td></tr></table>
+Creates a pdf of  the <code>transform_frame</code> graph 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>rosrun tf2_tools view_frames.py
+</code></pre></div>
+</td></tr></table>
+To view it, run
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>evince frames.pdf
+</code></pre></div>
+</td></tr></table></p>
                 
               
               
