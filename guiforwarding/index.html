@@ -300,23 +300,27 @@
 <p>First, install <a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a>, which is the X11 forwarding server. Follow the instructions and launch it. The <code>X</code> icon should appear in the tray to show that it is running.</p>
 <p>Open Putty, go to <code>Connection &gt; SSH &gt; X11</code> and enable X11 forwarding. </p>
 <p><img alt="putty info" src="../img/PuTTY_x11_gui.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using <code>byobu</code> for multitasking in the terminal, you have to go to <code>Connection &gt; Data &gt; Terminal</code> and change <code>xterm</code> to <code>putty-256color</code>. This allows you to use the F1-F12 keys.</p>
+</div>
 <p>That's it, as long as you haven't edited the <code>.bashrc</code> on the server (in my case, the pi). To test, install some gui apps:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install x11-apps
+<div class="highlight"><pre><span></span><code>sudo apt install x11-apps
 </code></pre></div>
-</td></tr></table>
 And then run one of the apps:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>xcalc 
+<div class="highlight"><pre><span></span><code>xcalc 
 </code></pre></div>
-</td></tr></table>
 A nice little window with a calculator should appear</p>
-<p><strong>Helpful Links:</strong>
-* <a href="https://unix.stackexchange.com/questions/207365/x-flag-x11-forwarding-does-not-appear-to-work-in-windows">This stack question</a>
+<p><strong>Helpful Links:</strong></p>
+<ul>
+<li><a href="https://unix.stackexchange.com/questions/207365/x-flag-x11-forwarding-does-not-appear-to-work-in-windows">This stack question</a>
 Doesn't even help, here is another sorta good link: https://jack-kawell.com/2020/06/12/ros-wsl2/
-and this if you have to use p has some good things although I never got found any pivotal data.<br />
-* <a href="https://jack-kawell.com/2020/06/12/ros-wsl2/">Tutorial to install WSL2</a>, although not exactly directly addressing the problem, has a good gui forwarding section. I used one of the commands, <code>echo 'export DISPLAY=&lt;your_ip_address&gt;:0.0' &gt;&gt; ~/.bashrc</code> . Don't know what else I used to get it to work.
-* <a href="https://codeyarns.com/tech/2013-01-21-byobu-function-keys-do-not-work-in-putty.html">How to fix F keys in Putty </a>  in case you have to use PuTTY instead of OpenSSH.
-* <a href="https://fabianlee.org/2018/10/14/ubuntu-x11-forwarding-to-view-gui-applications-running-on-server-hosts/
-%20https://bbs.archlinux.org/viewtopic.php?id=88883">Ancient Forum Post</a> that might help.</p>
+and this if you have to use p has some good things although I never got found any pivotal data.  </li>
+<li><a href="https://jack-kawell.com/2020/06/12/ros-wsl2/">Tutorial to install WSL2</a>, although not exactly directly addressing the problem, has a good gui forwarding section. I used one of the commands, <code>echo 'export DISPLAY=&lt;your_ip_address&gt;:0.0' &gt;&gt; ~/.bashrc</code> . Don't know what else I used to get it to work.</li>
+<li><a href="https://codeyarns.com/tech/2013-01-21-byobu-function-keys-do-not-work-in-putty.html">How to fix F keys in Putty </a>  in case you have to use PuTTY instead of OpenSSH.</li>
+<li><a href="https://fabianlee.org/2018/10/14/ubuntu-x11-forwarding-to-view-gui-applications-running-on-server-hosts/
+%20https://bbs.archlinux.org/viewtopic.php?id=88883">Ancient Forum Post</a> that might help.</li>
+</ul>
                 
               
               

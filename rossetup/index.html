@@ -409,13 +409,10 @@
 <p>First, install the <a href="https://www.raspberrypi.org/software/">Raspberry Pi Imager</a>. Open it and choose an OS, in my case Ubuntu Server 20.04. I'm using the server distro since in the final product we won't need a desktop or an guis for that matter. Make sure to choose the 64-bit distro. Before imaging, make sure your microSD is connected to your computer.</p>
 <p><img alt="rpi imager" src="../img/Raspi_Imager.png" /></p>
 <p>Once ubuntu is installed, put the microSD into the Pi, plug in the ethernet (or <a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi#3-wifi-or-ethernet">use normal WiFi</a>). On your first boot, connect an HDMI and keyboard (no mouse needed) to access the command line. Once you are in, run <code>sudo apt update</code> and <code>sudo apt upgrade</code> to make sure everything is up to date and test your network connection. Once you see everything works, you need to set your static hostname so you don't have to connect with IP using ssh. 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>hostnamectl set-hostname &lt;your_hostname&gt;
+<div class="highlight"><pre><span></span><code>hostnamectl set-hostname &lt;your_hostname&gt;
 <span class="c1"># ex</span>
 hostnamectl set-hostname hello_world
 </code></pre></div>
-</td></tr></table>
 To verify everything works, run <code>hostname</code> and see if the result matches your input. To connect with SSH, I configured the pi with a hostname of <code>hyperion4516</code> and a default username of <code>ubuntu</code>. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -423,9 +420,8 @@ To verify everything works, run <code>hostname</code> and see if the result matc
 </div>
 <h2 id="connecting-with-ssh">Connecting with SSH</h2>
 <p>Using OpenSSH (on any OS, really) you can connect to the Pi with:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssh ubuntu@hyperion4516 <span class="c1"># username@hostname</span>
+<div class="highlight"><pre><span></span><code>ssh ubuntu@hyperion4516 <span class="c1"># username@hostname</span>
 </code></pre></div>
-</td></tr></table>
 It will prompt you for the password, which is <code>hyperion4516</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -433,31 +429,22 @@ It will prompt you for the password, which is <code>hyperion4516</code>.</p>
 </div>
 <h2 id="installing-ros">Installing ROS</h2>
 <p>From the SSH client connected to the server, you can then follow the installation guide for <a href="http://wiki.ros.org/noetic/Installation/Ubuntu">ROS Noetic</a>. Install <code>ros-noetic-desktop-full</code> for all the packages you need. Make sure to properly configure and source your <code>.bashrc</code>     file for use in ROS with these commands:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;source /opt/ros/noetic/setup.bash&quot;</span> &gt;&gt; ~/.bashrc
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;source /opt/ros/noetic/setup.bash&quot;</span> &gt;&gt; ~/.bashrc
 <span class="nb">source</span> ~/.bashrc <span class="c1"># It will automatically source now</span>
 </code></pre></div>
-</td></tr></table>
 Also, actually follow <a href="https://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment">this guide</a> on confirming setup and making a sample workspace (that I didn't follow the first time). Each time you need to access packages in your workspace, run these commands:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="nb">cd</span> ~/catkin_ws <span class="c1"># go to the workspace</span>
+<div class="highlight"><pre><span></span><code>    <span class="nb">cd</span> ~/catkin_ws <span class="c1"># go to the workspace</span>
     catkin_make <span class="c1"># build the packages</span>
     <span class="nb">source</span> devel/setup.bash <span class="c1"># make sure the CLI knows about them</span>
 </code></pre></div>
-</td></tr></table>
 I believe doing <code>. ~/catkin_ws/devel/setup.bash</code> does the exact same thing as the last line in the snippet above. Both add the workspace to the ROS Environment. To confirm, run
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="nv">$ROS_PACKAGE_PATH</span> <span class="c1"># the ws directory should be included</span>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="nv">$ROS_PACKAGE_PATH</span> <span class="c1"># the ws directory should be included</span>
 </code></pre></div>
-</td></tr></table>
 Some useful ROS commands are:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>roscd &lt;package&gt; <span class="c1"># go to package directory</span>
+<div class="highlight"><pre><span></span><code>roscd &lt;package&gt; <span class="c1"># go to package directory</span>
 rosls &lt;package&gt; <span class="c1"># list the subdirectories and files in package</span>
 rosed &lt;package&gt; &lt;file&gt; <span class="c1"># edit package file with Vim</span>
-</code></pre></div>
-</td></tr></table></p>
+</code></pre></div></p>
 <h2 id="using-byobu">Using Byobu</h2>
 <p>Once you are done with the basic setup, I would recommend running <code>byobu</code> to activate a window switching command line thing. It helps with ROS stuff. Some simple hotkeys are:</p>
 <ul>
