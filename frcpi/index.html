@@ -14,7 +14,7 @@
     
     
       
-        <title>SSH GUI Forwarding - Learning ROS with FRC</title>
+        <title>RPi on RoboRIO network - Learning ROS with FRC</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ssh-gui-forwarding" class="md-skip">
+        <a href="#getting-rpi-to-work-with-roborio" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SSH GUI Forwarding
+              RPi on RoboRIO network
             
           </span>
         </div>
@@ -201,6 +201,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../guiforwarding/" class="md-nav__link">
+        SSH GUI Forwarding
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -213,24 +228,9 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        SSH GUI Forwarding
-      </a>
-      
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../frcpi/" class="md-nav__link">
         RPi on RoboRIO network
       </a>
+      
     </li>
   
 
@@ -295,28 +295,9 @@
               
                 
                 
-                <h1 id="ssh-gui-forwarding">SSH GUI Forwarding</h1>
-<p>For this tutorial I'm using <a href="https://putty.en.softonic.com/">PuTTY</a> since it is a lot easier to configure gui forwarding.</p>
-<p>First, install <a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a>, which is the X11 forwarding server. Follow the instructions and launch it. The <code>X</code> icon should appear in the tray to show that it is running.</p>
-<p>Open Putty, go to <code>Connection &gt; SSH &gt; X11</code> and enable X11 forwarding. </p>
-<p><img alt="putty info" src="../img/PuTTY_x11_gui.png" /></p>
-<p>That's it, as long as you haven't edited the <code>.bashrc</code> on the server (in my case, the pi). To test, install some gui apps:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install x11-apps
-</code></pre></div>
-</td></tr></table>
-And then run one of the apps:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>xcalc 
-</code></pre></div>
-</td></tr></table>
-A nice little window with a calculator should appear</p>
-<p><strong>Helpful Links:</strong>
-* <a href="https://unix.stackexchange.com/questions/207365/x-flag-x11-forwarding-does-not-appear-to-work-in-windows">This stack question</a>
-Doesn't even help, here is another sorta good link: https://jack-kawell.com/2020/06/12/ros-wsl2/
-and this if you have to use p has some good things although I never got found any pivotal data.<br />
-* <a href="https://jack-kawell.com/2020/06/12/ros-wsl2/">Tutorial to install WSL2</a>, although not exactly directly addressing the problem, has a good gui forwarding section. I used one of the commands, <code>echo 'export DISPLAY=&lt;your_ip_address&gt;:0.0' &gt;&gt; ~/.bashrc</code> . Don't know what else I used to get it to work.
-* <a href="https://codeyarns.com/tech/2013-01-21-byobu-function-keys-do-not-work-in-putty.html">How to fix F keys in Putty </a>  in case you have to use PuTTY instead of OpenSSH.
-* <a href="https://fabianlee.org/2018/10/14/ubuntu-x11-forwarding-to-view-gui-applications-running-on-server-hosts/
-%20https://bbs.archlinux.org/viewtopic.php?id=88883">Ancient Forum Post</a> that might help.</p>
+                <h1 id="getting-rpi-to-work-with-roborio">Getting RPi to work with RoboRIO</h1>
+<p>First, connect pi to OpenMesh Radio on the open USB port. 
+Then, go to Advanced IP Scanner on the driver's station. Change the range of ip's at the top bar to <code>10.45.16.1-10.45.16.254</code>. Run the scan and find your hostname set previously. I don't know how to connect to the hostname just yet, so find the ip next to the name and use PuTTY to connect. You should be able to use SSH normally on the pi on the driver's station to get it work.  </p>
                 
               
               
@@ -335,7 +316,7 @@ and this if you have to use p has some good things although I never got found an
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../rossetup/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../guiforwarding/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -344,19 +325,19 @@ and this if you have to use p has some good things although I never got found an
               <span class="md-footer__direction">
                 Previous
               </span>
-              ROS Installation & Setup
+              SSH GUI Forwarding
             </div>
           </div>
         </a>
       
       
-        <a href="../frcpi/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../linuxcmds/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              RPi on RoboRIO network
+              Useful Commands
             </div>
           </div>
           <div class="md-footer__button md-icon">
