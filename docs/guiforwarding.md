@@ -7,6 +7,9 @@ Open Putty, go to `Connection > SSH > X11` and enable X11 forwarding.
 
 ![putty info](img/PuTTY_x11_gui.png)
 
+!!! Note
+    If you are using `byobu` for multitasking in the terminal, you have to go to `Connection > Data > Terminal` and change `xterm` to `putty-256color`. This allows you to use the F1-F12 keys.
+
 That's it, as long as you haven't edited the `.bashrc` on the server (in my case, the pi). To test, install some gui apps:
 ```bash
 sudo apt install x11-apps
@@ -19,6 +22,7 @@ A nice little window with a calculator should appear
 
 
 **Helpful Links:**
+
 * [This stack question](https://unix.stackexchange.com/questions/207365/x-flag-x11-forwarding-does-not-appear-to-work-in-windows)
 Doesn't even help, here is another sorta good link: https://jack-kawell.com/2020/06/12/ros-wsl2/
 and this if you have to use p has some good things although I never got found any pivotal data.  

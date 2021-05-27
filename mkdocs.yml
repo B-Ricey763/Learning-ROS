@@ -1,4 +1,4 @@
-site_name: Learning ROS
+site_name: Learning ROS with FRC
 theme: 
   name: material
   palette:
@@ -13,12 +13,13 @@ nav:
   - Getting Started: index.md
   - ROS Installation & Setup: rossetup.md
   - SSH GUI Forwarding: guiforwarding.md
+  - RPi on RoboRIO network: frcpi.md
   - Useful Commands: linuxcmds.md
   - Further Reading: links.md
 
 markdown_extensions:
   - pymdownx.highlight:
-      linenums: true
+      linenums: false
   - pymdownx.superfences
   - admonition
   - toc
